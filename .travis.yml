@@ -5,4 +5,4 @@ services:
 before_install: 
   - docker build -t tamiilore/docker-react -f Dockerfile.dev .
 script: 
-  - docker run CI-true tamiilore/docker-react npm run test
+  - docker run tamiilore/docker-react npm run test -- --coverage
