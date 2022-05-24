@@ -1,8 +1,10 @@
-language: generic
 sudo: required
+
 services:
   - docker
+
 before_install: 
   - docker build -t tamiilore/docker-react -f Dockerfile.dev .
+
 script: 
-  - docker run tamiilore/docker-react npm run test -- --coverage
+  - docker run -e tamiilore/docker-react CI=true tamiilore/docker-react npm run test
