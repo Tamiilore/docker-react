@@ -1,4 +1,4 @@
-language: node
+language: generic
 
 sudo: required
 
@@ -8,8 +8,8 @@ services:
 before_install: 
   - docker build -t tamiilore/docker-react -f Dockerfile.dev .
 
-script: 
-  - docker run -e tamiilore/docker-react CI=true tamiilore/docker-react npm run test
+# script: 
+#   - docker run -e tamiilore/docker-react CI=true tamiilore/docker-react npm run test
 
 deploy:
   provider: elasticbeanstalk
